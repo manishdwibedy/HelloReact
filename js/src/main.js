@@ -5,19 +5,22 @@
 var CommentBox = React.createClass({
     propTypes: {
         name: React.PropTypes.string,
-        isPerson: React.PropTypes.bool
+        isLanguage: React.PropTypes.bool
     },
     aboutme: function () {
         alert("This is for " + this.props.name + " : " + this.props.children);
     },
     render: function() {
-        return (
-            <div>
-                <h1>
-                    Hello from <Language name={this.props.name} />
-                </h1>
 
-            </div>
+        var greeting = "World";
+
+        if(this.props.isLanguage){
+            greeting = (<Language name={this.props.name} />)
+        }
+        return (
+                <h1>
+                    Hello {greeting}
+                </h1>
         );
     }
 });
@@ -43,7 +46,7 @@ ReactDOM.render(
         <CommentBox name="JSX" isLanguage={true}>
             JSX is a preprocessor step that adds XML syntax to JavaScript.
         </CommentBox>
-        <CommentBox>
+        <CommentBox isLanguage={false}>
             Hello from React
         </CommentBox>
     </div>,
