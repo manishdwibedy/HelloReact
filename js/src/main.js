@@ -5,15 +5,25 @@
 var CommentBox = React.createClass({
     render: function() {
         return (
-            <h1>Hello {this.props.name}!!</h1>
+            <div>
+                <h1>
+                    {this.props.name}
+                </h1>
+                <p>
+                    {this.props.children}
+                </p>
+            </div>
         );
     }
 });
 ReactDOM.render(
     <div>
-        <CommentBox name="React"/>
-        <CommentBox name="JSX"/>
-        <CommentBox name="World"/>
+        <CommentBox name="React">
+            A JS library for building user interfaces.
+        </CommentBox>
+        <CommentBox name="JSX">
+            JSX is a preprocessor step that adds XML syntax to JavaScript.
+        </CommentBox>
     </div>,
     document.getElementById('example')
 );
