@@ -4,7 +4,8 @@
 
 var CommentBox = React.createClass({
     propTypes: {
-        name: React.PropTypes.string.isRequired
+        name: React.PropTypes.string,
+        isPerson: React.PropTypes.bool
     },
     aboutme: function () {
         alert("This is for " + this.props.name + " : " + this.props.children);
@@ -13,19 +14,33 @@ var CommentBox = React.createClass({
         return (
             <div>
                 <h1>
-                    {this.props.name}
+                    Hello from <Language name={this.props.name} />
                 </h1>
-                <a onClick={this.aboutme} href="#">About {this.props.name}</a>
+
             </div>
         );
     }
 });
+
+var Language = React.createClass({
+    propTypes: {
+        name: React.PropTypes.string
+    },
+    render: function() {
+        return (
+            <span>
+                {this.props.name}
+            </span>
+        );
+    }
+});
+
 ReactDOM.render(
     <div>
-        <CommentBox name="React">
+        <CommentBox name="React" isLanguage={true}>
             A JS library for building user interfaces.
         </CommentBox>
-        <CommentBox name="JSX">
+        <CommentBox name="JSX" isLanguage={true}>
             JSX is a preprocessor step that adds XML syntax to JavaScript.
         </CommentBox>
         <CommentBox>
