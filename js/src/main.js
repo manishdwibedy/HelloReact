@@ -10,6 +10,10 @@ var CommentBox = React.createClass({
     }
 });
 ReactDOM.render(
-    <CommentBox />,
+    <div>
+        <CommentBox />
+        <CommentBox />
+        <CommentBox />
+    </div>,
     document.getElementById('example')
 );
