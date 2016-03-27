@@ -12,6 +12,11 @@ var CommentBox = React.createClass({
             value : 1
         }
     },
+    componentDidMount: function () {
+        this.setState({
+            value : 2
+        });
+    },
     aboutme: function () {
         alert("This is for " + this.props.name + " : " + this.props.children);
     },
