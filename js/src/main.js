@@ -3,15 +3,16 @@
  */
 
 var CommentBox = React.createClass({
+    aboutme: function () {
+        alert("This is for " + this.props.name + " : " + this.props.children);
+    },
     render: function() {
         return (
             <div>
                 <h1>
                     {this.props.name}
                 </h1>
-                <p>
-                    {this.props.children}
-                </p>
+                <a onClick={this.aboutme} href="#">About {this.props.name}</a>
             </div>
         );
     }
