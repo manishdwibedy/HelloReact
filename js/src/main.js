@@ -5,15 +5,15 @@
 var CommentBox = React.createClass({
     render: function() {
         return (
-            <h1>Hello!!</h1>
+            <h1>Hello {this.props.name}!!</h1>
         );
     }
 });
 ReactDOM.render(
     <div>
-        <CommentBox />
-        <CommentBox />
-        <CommentBox />
+        <CommentBox name="React"/>
+        <CommentBox name="JSX"/>
+        <CommentBox name="World"/>
     </div>,
     document.getElementById('example')
 );
