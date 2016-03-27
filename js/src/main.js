@@ -13,12 +13,13 @@ var CommentBox = React.createClass({
         }
     },
     componentDidMount: function () {
-        this.setState({
-            value : this.state.value + 9
-        });
+
     },
     _addByOne: function () {
         console.log("Clicked");
+        this.setState({
+            value : this.state.value + 1
+        });
     },
     aboutme: function () {
         alert("This is for " + this.props.name + " : " + this.props.children);
