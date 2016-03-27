@@ -7,6 +7,11 @@ var CommentBox = React.createClass({
         name: React.PropTypes.string,
         isLanguage: React.PropTypes.bool
     },
+    getInitialState: function () {
+        return {
+            value : 1
+        }
+    },
     aboutme: function () {
         alert("This is for " + this.props.name + " : " + this.props.children);
     },
@@ -18,9 +23,10 @@ var CommentBox = React.createClass({
             greeting = (<Language name={this.props.name} />)
         }
         return (
-                <h1>
-                    Hello {greeting}
-                </h1>
+                <div>
+                    <h1>Hello {greeting}</h1>
+                    State - {this.state.value}
+                </div>
         );
     }
 });
