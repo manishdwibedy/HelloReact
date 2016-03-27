@@ -1,4 +1,12 @@
 
+Installation:
+npm install --global babel-cli
+npm install babel-preset-react
+
+Configuring babel to transfrom .js files in js/src and put them in js/build
+babel --presets react js/src --watch --out-dir js/build
+
+
 Using the following link:
 http://facebook.github.io/react/docs/getting-started.html
 
