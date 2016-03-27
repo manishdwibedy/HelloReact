@@ -4,12 +4,7 @@
 
 var CommentBox = React.createClass({
     propTypes: {
-        name: React.PropTypes.string
-    },
-    getDefaultProps: function () {
-        return{
-            name: 'Manish'
-        }
+        name: React.PropTypes.string.isRequired
     },
     aboutme: function () {
         alert("This is for " + this.props.name + " : " + this.props.children);
@@ -33,7 +28,7 @@ ReactDOM.render(
         <CommentBox name="JSX">
             JSX is a preprocessor step that adds XML syntax to JavaScript.
         </CommentBox>
-        <CommentBox name={false}>
+        <CommentBox>
             Hello from React
         </CommentBox>
     </div>,
