@@ -14,7 +14,7 @@ var CommentBox = React.createClass({
     },
     componentDidMount: function () {
         this.setState({
-            value : 2
+            value : this.state.value + 9
         });
     },
     aboutme: function () {
