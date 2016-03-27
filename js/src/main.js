@@ -17,6 +17,9 @@ var CommentBox = React.createClass({
             value : this.state.value + 9
         });
     },
+    _addByOne: function () {
+        console.log("Clicked");
+    },
     aboutme: function () {
         alert("This is for " + this.props.name + " : " + this.props.children);
     },
@@ -30,7 +33,8 @@ var CommentBox = React.createClass({
         return (
                 <div>
                     <h1>Hello {greeting}</h1>
-                    State - {this.state.value}
+                    State - {this.state.value} <br/>
+                    <button onClick={this._addByOne}>Click ME</button>
                 </div>
         );
     }
